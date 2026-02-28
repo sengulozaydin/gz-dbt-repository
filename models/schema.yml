@@ -3,14 +3,13 @@ version: 2
 sources:
   - name: raw
     schema: gz_raw_data
-    schema: gz_raw_data
-    freshness:
-      warn_after: {count: 1, period: day}
-      error_after: {count: 2, period: day}
-    loaded_at_field: date_date
     tables:
       - name: sales
         identifier: raw_gz_sales
+        loaded_at_field: date_date
+        freshness:
+           warn_after: {count: 1, period: day}
+           error_after: {count: 2, period: day}
         description: "Sales of Greenweez (one row per product_id in each orders_id)."
         columns:
           - name: date_date
