@@ -42,14 +42,31 @@ sources:
             description: "Logistics cost."
           - name: ship_cost
             description: "Ship cost."
-                  - name: adwords
+                  
+      - name: adwords
         identifier: raw_gz_adwords
 
-          - name: bing
-            identifier: raw_gz_bing
+      - name: bing
+        identifier: raw_gz_bing
 
-          - name: criteo
-            identifier: raw_gz_criteo
+      - name: criteo
+        identifier: raw_gz_criteo
 
-          - name: facebook
-            identifier: raw_gz_facebook
+      - name: facebook
+        identifier: raw_gz_facebook
+
+models:
+  - name: int_campaigns
+    description: "Unified campaigns table from all ad platforms"
+    columns:
+      - name: date_date
+        tests:
+          - not_null
+      - name: campaign_name
+        tests:
+          - not_null
+      - name: campaign_key
+        tests:
+          - not_null
+  
+          
